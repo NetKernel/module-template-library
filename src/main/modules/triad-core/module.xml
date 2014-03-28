@@ -1,0 +1,33 @@
+<module version="2.0">
+  <meta>
+    <identity>
+      <uri>${baseUrn}</uri>
+      <version>${moduleVersion}</version>
+    </identity>
+    <info>
+      <name>Layer0 / Kotlin</name>
+      <description>${moduleDescription}</description>
+      <icon>${toResPath(baseUrn)}/images/icon.png</icon>
+    </info>
+  </meta>
+
+  <system>
+    <classloader>
+      <exports>
+        <match>org\.netkernelroc\.layer0\.kotlin\..*</match>
+      </exports>
+    </classloader>
+    <dynamic/>
+  </system>
+
+  <rootspace
+      uri="${baseUrn}"
+      name="Layer0 / Kotlin">
+
+    <fileset>
+      <regex>${toResPath(baseUrn)}/images/(.*)</regex>
+      <rewrite>res:/resources/images/$1</rewrite>
+    </fileset>
+  </rootspace>
+
+</module>

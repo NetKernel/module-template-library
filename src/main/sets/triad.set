@@ -1,0 +1,3 @@
+module=triad-doc
+module=triad-test
+module=triad-core

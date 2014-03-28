@@ -1,0 +1,60 @@
+<module version="2.0">
+
+  <meta>
+    <identity>
+      <uri>${baseUrn}:test</uri>
+      <version>${moduleVersion}</version>
+    </identity>
+    <info>
+      <name>Layer0 / Kotlin / Test</name>
+      <description>${moduleDescription}</description>
+      <icon>${toResPath(baseUrn)}/images/icon.png</icon>
+    </info>
+  </meta>
+
+  <system>
+    <dynamic/>
+  </system>
+
+  <rootspace
+      uri="${baseUrn}:test"
+      public="true"
+      name="Layer0 / Kotlin / Test">
+
+    <accessor>
+      <grammar>
+        <active>
+          <identifier>active:testKotlinExistence</identifier>
+        </active>
+      </grammar>
+      <class>org.netkernelroc.layer0.kotlin.test.endpoint.ExistenceTestEndpoint</class>
+    </accessor>
+
+
+    <import>
+      <uri>${baseUrn}</uri>
+    </import>
+
+    <import>
+      <uri>urn:org:netkernelroc:lang:kotlin</uri>
+    </import>
+
+    <import>
+      <private/>
+      <uri>urn:org:netkernel:xml:core</uri>
+    </import>
+
+    <fileset>
+      <regex>res:/etc/system/Tests.xml</regex>
+    </fileset>
+    <fileset>
+      <regex>res:/resources/tests/testlist.xml</regex>
+    </fileset>
+
+    <fileset>
+      <regex>${toResPath(baseUrn)}/images/(.*)</regex>
+      <rewrite>res:/resources/images/$1</rewrite>
+    </fileset>
+  </rootspace>
+
+</module>

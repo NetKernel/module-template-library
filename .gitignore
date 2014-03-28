@@ -1,0 +1,6 @@
+atlassian*
+build/
+*.class
+.idea
+*.iml
+.gradle

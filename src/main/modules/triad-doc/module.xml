@@ -1,0 +1,37 @@
+<module version="2.0">
+  <meta>
+    <identity>
+      <uri>${baseUrn}:doc</uri>
+      <version>${moduleVersion}</version>
+    </identity>
+    <info>
+      <name>Layer0 / Kotlin / Documentation</name>
+      <description>${moduleDescription}</description>
+      <icon>${toResPath(baseUrn)}/images/icon.png</icon>
+    </info>
+  </meta>
+
+  <system>
+    <dynamic/>
+  </system>
+
+  <rootspace 
+	  uri="${baseUrn}:doc" 
+	  public="true" 
+	  name="Layer0 / Kotlin / Documentation">
+
+    <fileset>
+      <regex>res:/etc/system/(Books|Docs).xml</regex>
+    </fileset>
+    <fileset>
+      <regex>res:/org/netkernelroc/layer0/kotlin/doc/(.*)</regex>
+      <rewrite>res:/resources/doc/$1</rewrite>
+    </fileset>
+
+    <fileset>
+      <regex>${toResPath(baseUrn)}/images/(.*)</regex>
+      <rewrite>res:/resources/images/$1</rewrite>
+    </fileset>
+  </rootspace>
+
+</module>
