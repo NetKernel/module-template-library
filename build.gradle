@@ -1,7 +1,16 @@
 
 apply plugin: 'java'
+apply plugin: 'maven'
 
-version = '1.0.0'
+
+install {
+  repositories.mavenInstaller {
+    pom.version = '1.0.0'
+    pom.artifactId = 'module-template-library'
+    pom.groupId = 'org.netkernelroc'
+  }
+}
+
 jar {
   from 'build/dist'
   manifest {
@@ -9,32 +18,4 @@ jar {
   }
 }
 
-
-task copyModules(type: Copy) {
-  into 'build/dist'
-  from 'src/main/modules'
-}
-
-task copySets(type: Copy) {
-  into 'build/dist/sets'
-  from 'src/main/sets'
-}
-
-jar.dependsOn('copyModules')
-jar.dependsOn('copySets')
-
-
-//useStandardCompileDependencies()
-
-//buildscript {
-//  repositories {
-//    mavenLocal()
-//    mavenCentral()
-//    maven {
-//      // TODO: Default to local, but allow override
-//      url "http://maven.netkernelroc.org:8080/netkernel-maven"
-//      //url "http://localhost:8080/netkernel-maven"
-//    }
-//  }
-//}
 

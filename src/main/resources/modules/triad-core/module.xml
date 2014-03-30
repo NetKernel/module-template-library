@@ -1,0 +1,28 @@
+<module version="2.0">
+  <meta>
+    <identity>
+      <uri>MODULE_URN</uri>
+      <version>MODULE_VERSION</version>
+    </identity>
+    <info>
+      <name>Layer0 / Kotlin</name>
+      <description>MODULE_DESCRIPTION</description>
+      <icon>MODULE_URN_RES_PATH/images/icon.png</icon>
+    </info>
+  </meta>
+
+  <system>
+    <dynamic/>
+  </system>
+
+  <rootspace
+      uri="MODULE_URN"
+      name="Layer0 / Kotlin">
+
+    <fileset>
+      <regex>MODULE_URN_RES_PATH/images/(.*)</regex>
+      <rewrite>res:/resources/images/$1</rewrite>
+    </fileset>
+  </rootspace>
+
+</module>

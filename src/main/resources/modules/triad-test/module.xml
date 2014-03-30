@@ -2,13 +2,13 @@
 
   <meta>
     <identity>
-      <uri>${baseUrn}:test</uri>
-      <version>${moduleVersion}</version>
+      <uri>MODULE_URN</uri>
+      <version>MODULE_VERSION</version>
     </identity>
     <info>
-      <name>Layer0 / Kotlin / Test</name>
-      <description>${moduleDescription}</description>
-      <icon>${toResPath(baseUrn)}/images/icon.png</icon>
+      <name>MODULE_NAME</name>
+      <description>MODULE_DESCRIPTION</description>
+      <icon>MODULE_URN_RES_PATH_CORE/images/icon.png</icon>
     </info>
   </meta>
 
@@ -17,9 +17,9 @@
   </system>
 
   <rootspace
-      uri="${baseUrn}:test"
+      uri="MODULE_URN"
       public="true"
-      name="Layer0 / Kotlin / Test">
+      name="MODULE_DESCRIPTION">
 
     <accessor>
       <grammar>
@@ -32,7 +32,7 @@
 
 
     <import>
-      <uri>${baseUrn}</uri>
+      <uri>MODULE_URN_CORE</uri>
     </import>
 
     <import>
@@ -52,7 +52,7 @@
     </fileset>
 
     <fileset>
-      <regex>${toResPath(baseUrn)}/images/(.*)</regex>
+      <regex>MODULE_URN_RES_PATH_CORE/images/(.*)</regex>
       <rewrite>res:/resources/images/$1</rewrite>
     </fileset>
   </rootspace>
