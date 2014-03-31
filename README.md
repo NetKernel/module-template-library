@@ -5,16 +5,42 @@ This contains a library of module templates that can be used by
 the NetKernel Gradle plugin authored by 1060 Research
 and others. See https://github.com/1060NetKernel/gradle-plugin
 
-## Library format
+Community members may add to this library or construct their
+own module template libraries and publish them as JAR files.
+The NetKernel Gradle plugin searches for template libraries
+in Maven repositories - which may be local or in a public
+location.
 
-As of release 0.0.2 of the Gradle plugin place a new module template
-under the modules directory in /src/main/resources.
-The name of the module template's directory will be displayed to
-the user so make this significant.
+## Template Library JAR File Format
 
-When the user runs the task to create a module from a template the
-complete contents of the module template (files and directories)
-are replicated in the target module.
+The published template library JAR file must have the following
+structure:
+
+    /META-INF/MANFEST.FM
+    /modules
+            /<module-template-name>
+                                   /src/main/resources
+                                                      /module.xml
+                                   /src/main/java/
+
+
+The name given for the template (module-template-name) is displayed to
+the user of the Gradle plugin and is used by the user to select
+template, so make this representative of the template
+and unique within the JAR file. (It also should be unique across all
+module template libraries, however, this restriction will be lifted
+in a subsequent release of the plugin.
+
+## Template Substitution Variables
+
+When creating files for a template library one can use the following
+substitution markers.
+The Gradle plugin will ask the user for certain information which will
+be used to create substitution values for the variables.
+
+
+| User Input | Description | Substitution Variable |
+| Module URN | The URN for the module | MODULE_URN |
 
 The user will be asked for the URN of the module and that information
 will be used to create substitutions within any file that is copied
@@ -36,7 +62,10 @@ MODULE_URN_RES_PATH_CORE - this is an ROC res: URI constructed from the user pro
 URN with the trailing part removed. For example, a URN of urn:org:netkernelroc:lang:groovy:test
 will have a corresponding MODULE_URN_RES_PATH_CORE of res:/org/netkernelroc/lang/groovy.
 
-### Not Supported
+MODULE_SPACE_NAME - this is the name that is displayed in the Space Explorer. For example
+"Lang / Kotlin" is the space name for the Kotlin language core support module.
+
+## Not Supported
 
 MODULE_DESCRIPTION - this is not supported in the 0.0.2 release
 
