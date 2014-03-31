@@ -19,24 +19,20 @@
   <rootspace
       uri="MODULE_URN"
       public="true"
-      name="MODULE_DESCRIPTION">
+      name="MODULE_SPACE_NAME / Test">
 
     <accessor>
       <grammar>
         <active>
-          <identifier>active:testKotlinExistence</identifier>
+          <identifier>active:testExistence</identifier>
         </active>
       </grammar>
-      <class>org.netkernelroc.layer0.kotlin.test.endpoint.ExistenceTestEndpoint</class>
+      <class>MODULE_URN_CORE_PACKAGE.test.endpoint.ExistenceTestEndpoint</class>
     </accessor>
 
 
     <import>
       <uri>MODULE_URN_CORE</uri>
-    </import>
-
-    <import>
-      <uri>urn:org:netkernelroc:lang:kotlin</uri>
     </import>
 
     <import>

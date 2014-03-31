@@ -18,7 +18,7 @@
   <rootspace 
 	  uri="MODULE_URN" 
 	  public="true" 
-	  name="MODULE_NAME">
+	  name="MODULE_SPACE_NAME / Documentation">
 
     <fileset>
       <regex>res:/etc/system/(Books|Docs).xml</regex>

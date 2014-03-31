@@ -5,7 +5,7 @@
       <version>MODULE_VERSION</version>
     </identity>
     <info>
-      <name>Layer0 / Kotlin</name>
+      <name>MODULE_SPACE_NAME</name>
       <description>MODULE_DESCRIPTION</description>
       <icon>MODULE_URN_RES_PATH/images/icon.png</icon>
     </info>
@@ -17,7 +17,7 @@
 
   <rootspace
       uri="MODULE_URN"
-      name="Layer0 / Kotlin">
+      name="MODULE_SPACE_NAME">
 
     <fileset>
       <regex>MODULE_URN_RES_PATH/images/(.*)</regex>

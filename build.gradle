@@ -5,7 +5,7 @@ apply plugin: 'maven'
 
 install {
   repositories.mavenInstaller {
-    pom.version = '1.0.0'
+    pom.version = '0.2.0'
     pom.artifactId = 'module-template-library'
     pom.groupId = 'org.netkernelroc'
   }
