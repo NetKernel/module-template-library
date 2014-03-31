@@ -39,8 +39,11 @@ The Gradle plugin will ask the user for certain information which will
 be used to create substitution values for the variables.
 
 
-| User Input | Description | Substitution Variable |
-| Module URN | The URN for the module | MODULE_URN |
+User Input | Description | Substitution Variable
+----- | ----- | -----
+Module URN | The URN for the module | MODULE_URN
+
+
 
 The user will be asked for the URN of the module and that information
 will be used to create substitutions within any file that is copied
