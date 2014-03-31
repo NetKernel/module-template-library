@@ -1,4 +1,3 @@
-
 # NetKernel Module Template Library
 
 This contains a library of module templates that can be used by
@@ -39,11 +38,15 @@ The Gradle plugin will ask the user for certain information which will
 be used to create substitution values for the variables.
 
 
-User Input | Description | Substitution Variable
------ | ----- | -----
-Module URN | The URN for the module | MODULE_URN
-
-
+User Input | Description | Substitution Variable | Description
+----- | ----- | ----- | ----
+Module URN | The globally unique identifier for the module. | MODULE_URN | Use where the full module URN as entered by the user should be used
+  |  |  MODULE_URN_CORE | The URN entered by the user with the final portion stripped off. Use this when the user might enter some with a :test suffix and you need the URN without the final portion.
+  |  |  MODULE_URN_RES_PATH | A res:/ URI scheme with the module's URN translated into a directory path
+  |  |  MODULE_URN_RES_PATH_CORE | A res:/ URI scheme with the module's URN (stripped of the final portion translated into a directory path
+Module Space Name | The name displayed in the Space Explorer | MODULE_SPACE_NAME | For example "Lang / Kotlin"
+Module description | A brief description of the module | MODULE_DESCRIPTION | sss
+Module version | The initial version number of the module | MODULE_VERSION | If not provided, defaults to 1.0.0
 
 The user will be asked for the URN of the module and that information
 will be used to create substitutions within any file that is copied
@@ -67,18 +70,4 @@ will have a corresponding MODULE_URN_RES_PATH_CORE of res:/org/netkernelroc/lang
 
 MODULE_SPACE_NAME - this is the name that is displayed in the Space Explorer. For example
 "Lang / Kotlin" is the space name for the Kotlin language core support module.
-
-## Not Supported
-
-MODULE_DESCRIPTION - this is not supported in the 0.0.2 release
-
-MODULE_VERSION - this is not supported in the 0.0.2 release
-
-Sets are not supported. This is a concept in which a user can select a named set which
-might contain one or more module templates. Sets can be used to mirror the creation
-of an Apposite package structure.
-
-library-properties.xml - this is a meta information file that will contain information
-that will be used by a future release of the Gradle plugin.
-
 
